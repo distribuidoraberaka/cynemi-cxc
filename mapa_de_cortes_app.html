@@ -41,7 +41,7 @@ footer{padding:20px 32px 40px;color:var(--muted);font-family:Arial,sans-serif;fo
 <body>
 <header>
   <h1>&#129385; El Asador — Mapa de Cortes</h1>
-  <p>108 piezas sobre la mesa. Filtrá, elegí lo que entra esta semana, y avisame cuáles marcaste.</p>
+  <p id="introText">Filtrá, elegí lo que entra esta semana, y avisame cuáles marcaste.</p>
 </header>
 <div class="controls">
   <select id="fRol"><option value="">Rol — todos</option></select>
@@ -176,7 +176,7 @@ document.getElementById('btnExport').addEventListener('click', ()=>{
 ['fRol','fNaturaleza','fEstado','fPrioridad','fSoloElegidos'].forEach(id=>{
   document.getElementById(id).addEventListener('change', render);
 });
-document.getElementById('fBuscar').addEventListener('input', render);
+document.getElementById('introText').textContent = items.length + ' piezas sobre la mesa. Filtrá, elegí lo que entra esta semana, y avisame cuáles marcaste.';
 
 render();
 </script>
